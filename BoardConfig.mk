@@ -54,7 +54,7 @@ WIFI_DRIVER_FW_PATH_AP           := "/vendor/etc/wifi/bcmdhd_apsta.bin"
 WIFI_BAND                        := 802_11_ABG
 
 # ANT+
-BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease
+BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
 # inherit from common
 -include device/samsung/universal7870-common/BoardConfigCommon.mk
