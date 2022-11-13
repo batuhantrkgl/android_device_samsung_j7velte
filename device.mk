@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2019 The LineageOS Project
+# Copyright (C) 2019 The ArrowOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -21,6 +21,9 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/audio/mixer_gains.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_gains.xml \
     $(DEVICE_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
 
+# Launch Android API level
+PRODUCT_SHIPPING_API_LEVEL := 23
+
 # Bootanimation
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 720
@@ -33,7 +36,9 @@ PRODUCT_AAPT_PREBUILT_DPI := xhdpi hdpi
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
-    android.hardware.bluetooth@1.0-service
+    android.hardware.bluetooth@1.0-service \
+    android.hardware.bluetooth.audio@2.0-impl \
+    audio.bluetooth.default \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -42,7 +47,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     mobicore.rc \
-    wifi_device.rc
+    init.wifi_device.rc
 
 # Wifi
 PRODUCT_PACKAGES += \
